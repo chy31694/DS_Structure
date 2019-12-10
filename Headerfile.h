@@ -17,6 +17,7 @@ using namespace std;
 #define FALSE 0
 #define ERROR 0
 #define OVERFLOW -1
+#define OK 1
 // ----------------------------
 
 // ----------------------------
@@ -28,6 +29,10 @@ typedef struct Bidder
     int price;       // 竞价信息的出价
 } Bidder, *bidNode;
 
-Bidder bidderGroup[MAXSIZE];    // 竞价信息组
-int ifSorted = 0;               // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;
-// -----------------------------
+typedef struct
+{
+    Bidder *bidderGroup;
+    int length;   //当前长度
+} SqList;
+
+int ifSorted = 0; // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;               

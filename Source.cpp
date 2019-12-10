@@ -58,6 +58,8 @@ void chooseFuction(void)
 // -----------------------------------
 int main(int argc, char const *argv[])
 {
+    SqList L;
+    InitList_Sq(L);
     chooseFuction();
     return 0;
 }
