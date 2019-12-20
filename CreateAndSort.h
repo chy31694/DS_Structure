@@ -12,7 +12,7 @@ bool InitList_Sq(SqList &L)
     if (!L.bidderGroup)
         exit(OVERFLOW); // 分配空间失败
 
-    L.length = 0; //表示长度为
+    L.length = 0; //表示长度为 0
     return OK;
     // 由于函数运行至return就已经截止, 以下部分并不会执行, 仅作为后续函数编写时的参考, 便于诸位理解
 
