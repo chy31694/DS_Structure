@@ -1,7 +1,7 @@
 #include "Statistic.h"
 
 // -----------------------------------
-//              主程序
+//            MAIN CORE
 // -----------------------------------
 
 // -----------------------------------
@@ -15,12 +15,12 @@ void msg(void)
         << "1. Load the file of BidderList \n"
         << "2. Create a new BidderList\n"
         << "3. Output the file of BidderList\n"
-        << "4. Sort the BidderList\n"
+        << "4. Sort the BidderList\n"// NOT FINISHED
         << "5. Print the BidderList\n"
-        << "6. Insert/Delete bid\n"
-        << "7. Set the number of successful bidders\n"
-        << "8. Output the List of successful bidders\n"
-        << "9. Destroy the BidderList\n"
+        << "6. Insert/Delete bid\n"// NOT FINISHED
+        << "7. Set the number of successful bidders\n"// NOT FINISHED
+        << "8. Output the List of successful bidders\n"// NOT FINISHED
+        << "9. Destroy the BidderList\n"// NOT FINISHED
         << "0. Exit\n"
         << "----------------------------------------\n"
         << "The highest bidder:\n" // << *最高出价的竞价序列号
@@ -28,7 +28,6 @@ void msg(void)
         << "----------------------------------------\n"
         << "Enter the function you choose: ";
 }
-// -----------------------------------
 
 // -----------------------------------
 // chooseFuction
@@ -61,6 +60,11 @@ void chooseFuction(void)
 
         case 5:
             printTheAllBidderGroup(L);
+            break;
+
+        case 9:
+            destroyTheFile();
+            destroyTheTemp(L);
             break;
 
         case 0:

@@ -21,7 +21,7 @@ void outputTheAllbidderList(SqList L)
     }
 
     FILE *fp;
-    fp = fopen("BidderList", "w");
+    fp = fopen("BidderList", "w+");
     fprintf(fp, "This is the List of bidder\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
     fprintf(fp, "Length: %d\n\n", L.length);
     for (i = 1; i <= L.length; ++i)
@@ -60,3 +60,38 @@ void loadTheAllbidderList(SqList &L)
 
     fclose(fp);
 } // loadTheAllbidderList
+
+// -----------------------------------
+// DESTROY THEM ALL!Wryyyyyyyyyyyyyy!!!
+// -----------------------------------
+
+void destroyTheTemp(SqList &L)
+{
+    delete L.bidderGroup;
+    L.length = 0;
+} // destroyTheTemp
+
+void destroyTheFile(void)
+{
+    FILE *fp;
+
+    fp = fopen("BidderList", "r");
+    if ((fp = fopen("BidderList", "r")) == NULL)
+    {
+        cout << "\nFile not found!\n"
+             << endl;
+        return;
+    }
+    fclose(fp);
+
+    if (remove("BidderList") == 0)
+    {
+        cout << "\n\nDelete Finished\n"
+             << endl;
+    }
+    else
+    {
+        cout << "\n\nDelete Failed\n"
+             << endl;
+    }
+} // destroyTheFile

@@ -25,4 +25,4 @@ bool Eg(SqList &L)  //该函数仅作为说明
     a = b;
     b = t;
 
-} // InitList_Sq
+} // Eg
