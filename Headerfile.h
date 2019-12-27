@@ -8,7 +8,6 @@
 #include <time.h>
 
 using namespace std;
-// ----------------------------
 
 // ----------------------------
 // 定义
@@ -19,7 +18,6 @@ using namespace std;
 #define ERROR 0
 #define OVERFLOW -1
 #define OK 1
-// ----------------------------
 
 // ----------------------------
 // 全局变量
