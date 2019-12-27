@@ -1,3 +1,4 @@
 
-Source.exe
+*.exe
 *.json
+BidderList

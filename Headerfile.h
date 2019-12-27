@@ -5,6 +5,7 @@
 // 头文件
 // ----------------------------
 #include <iostream>
+#include <iomanip>
 #include <time.h>
 
 using namespace std;
@@ -31,7 +32,7 @@ typedef struct Bidder
 typedef struct
 {
     Bidder *bidderGroup;
-    int length;   //当前长度
+    int length; //当前长度
 } SqList;
 
 int ifSorted = 0; // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;

@@ -33,3 +33,45 @@ bool InitList_Sq(SqList &L)
     b = t;
 
 } // InitList_Sq
+
+// -----------------------------------
+// Create/Initialize the BidderGroup
+// -----------------------------------
+bool createTheBidderGroup(SqList &L)
+{
+    InitList_Sq(L);
+    int i, n;
+    cout << "\nEnter the number of bidders: ";
+    cin >> n;
+    L.length = n;
+    srand((unsigned int)time(0)); // Initialize the 'randseed'
+    for (i = 1; i <= n; ++i)
+    {
+        L.bidderGroup[i].phoneNumber = i + 1000;
+        L.bidderGroup[i].price = rand() % 9001 + 1000;
+    }
+    ifSorted = 0;
+    return OK;
+} // createTheBidderGroup
+
+// -----------------------------------
+// Print the BidderGroup
+// -----------------------------------
+void printTheAllBidderGroup(SqList L)
+{
+    int i;
+    if (L.length == 0)
+    {
+        cout << "\nThere is no bid." << endl;
+        return;
+    }
+
+    cout << "\nThe BidderList:" << endl;
+
+    for (i = 1; i <= L.length; ++i)
+    {
+        printf("Num %04d. ", i);
+        cout << "Phone:" << L.bidderGroup[i].phoneNumber << setw(10) << "Price:"<< L.bidderGroup[i].price << endl;
+    }
+    cout << "\nFinished.\n" << endl;
+} // printTheAllBidderGroup

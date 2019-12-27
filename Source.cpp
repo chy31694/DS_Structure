@@ -11,55 +11,69 @@
 void msg(void)
 {
     cout
-        << "1. 导入已有竞价表"
-        << "2. 生成新竞价表"
-        << "3. 保存当前竞价表"
-        << "4. 排序竞价表"
-        << "5. 插入一条竞价信息"
-        << "6. 删除一条竞价信息"
-        << "7. 设定备货量(中标人数)"
-        << "8. 输出中标者"
-        << "9. 销毁竞价表"
-        << "0. 退出"
-        << "--------------------"
-        << "当前最高出价者:" // << *最高出价的竞价序列号
-        << "当前最高出价:"   // << *最高出价
-        << "--------------------"
-        << endl;
+        << "----------------------------------------\n"
+        << "1. Load the file of BidderList \n"
+        << "2. Create a new BidderList\n"
+        << "3. Output the file of BidderList\n"
+        << "4. Sort the BidderList\n"
+        << "5. Print the BidderList\n"
+        << "6. Insert/Delete bid\n"
+        << "7. Set the number of successful bidders\n"
+        << "8. Output the List of successful bidders\n"
+        << "9. Destroy the BidderList\n"
+        << "0. Exit\n"
+        << "----------------------------------------\n"
+        << "The highest bidder:\n" // << *最高出价的竞价序列号
+        << "The highest price:\n"  // << *最高出价
+        << "----------------------------------------\n"
+        << "Enter the function you choose: ";
 }
 // -----------------------------------
 
 // -----------------------------------
-// 功能选择函数
+// chooseFuction
 // -----------------------------------
 void chooseFuction(void)
 {
+    SqList L;
+    InitList_Sq(L);
     int choose;
+    int n;
+
     do
     {
         msg();
-        cout << "\n输入所选功能的序号: ";
         cin >> choose;
 
         switch (choose)
         {
         case 1:
+            loadTheAllbidderList(L);
+            break;
 
+        case 2:
+            createTheBidderGroup(L);
+            break;
+
+        case 3:
+            outputTheAllbidderList(L);
+            break;
+
+        case 5:
+            printTheAllBidderGroup(L);
             break;
 
         case 0:
             exit(1);
         }
     } while (choose != 0);
-}
+} // chooseFuction
 
 // -----------------------------------
-// 主函数
+// THE START
 // -----------------------------------
 int main(int argc, char const *argv[])
 {
-    SqList L;
-    InitList_Sq(L);
     chooseFuction();
     return 0;
-}
+} // main
