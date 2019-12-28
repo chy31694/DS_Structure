@@ -148,4 +148,4 @@ bool outputTheListOfSuccessfulBidders(SqList L)
     cout << "\nOutput Finished.\n\n"
          << endl;
     return OK;
-}
+} // outputTheListOfSuccessfulBidders
