@@ -44,4 +44,3 @@ int successfulBidders = 0;
 #include "CreateAndSort.h"
 #include "InsertAndDelete.h"
 #include "LoadFileAndOutput.h"
-#include "Statistic.h"

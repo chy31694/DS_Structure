@@ -138,7 +138,7 @@ bool outputTheListOfSuccessfulBidders(SqList L)
     fp = fopen("SucBidderList", "w+");
     fprintf(fp, "This is the List of Successful bidders\n\n");
     fprintf(fp, "Length: %d\n\n", successfulBidders);
-    for (i = 0; i < successfulBidders; ++i)
+    for (i = 1; i <= successfulBidders; ++i)
     {
         fprintf(fp, "Num %04d. Phone: %d  Price: %d\n", i, L.bidderGroup[L.length - i].phoneNumber, L.bidderGroup[L.length - i].price);
     }
