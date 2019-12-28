@@ -2,7 +2,7 @@
 // 定义或者全局变量也是在这里添加
 
 // ----------------------------
-// INCLUDE
+// EXTERNAL INCLUDE
 // ----------------------------
 #include <iostream>
 #include <iomanip>
@@ -37,3 +37,11 @@ typedef struct
 
 int ifSorted = 0; // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;
 int successfulBidders = 0;
+
+// ----------------------------
+// FILE INCLUDE
+// ----------------------------
+#include "CreateAndSort.h"
+#include "InsertAndDelete.h"
+#include "LoadFileAndOutput.h"
+#include "Statistic.h"

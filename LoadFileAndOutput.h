@@ -1,4 +1,3 @@
-#include "InsertAndDelete.h"
 // -----------------------------------
 // 模块:文件的载入和导出
 // 负责人:杭子奇
@@ -22,7 +21,7 @@ void outputTheAllbidderList(SqList L)
 
     FILE *fp;
     fp = fopen("BidderList", "w+");
-    fprintf(fp, "This is the List of bidder\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
+    fprintf(fp, "This is the List of bidders\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
     fprintf(fp, "Length: %d\n\n", L.length);
     fprintf(fp, "ifSorted: %d\n\n", ifSorted);
     for (i = 1; i <= L.length; ++i)
@@ -53,7 +52,7 @@ void loadTheAllbidderList(SqList &L)
         return;
     }
 
-    fscanf(fp, "This is the List of bidder\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
+    fscanf(fp, "This is the List of bidders\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
     fscanf(fp, "Length: %d\n\n", &L.length);
     fscanf(fp, "ifSorted: %d\n\n", &ifSorted);
 
@@ -95,3 +94,58 @@ void destroyTheFile(void)
          << endl;
 
 } // destroyTheFile
+
+// -----------------------------------
+// SuccessfulBidders
+// -----------------------------------
+void setTheNumberOfSuccessfulBidders(SqList L)
+{
+    if (L.length == 0)
+    {
+        cout << "\nThere is no bid\n"
+             << endl;
+        return;
+    }
+    do
+    {
+        cout << "\nEnter the numbers of successful bidders(Now: " << L.length << " bidders):";
+        cin >> successfulBidders;
+    } while (successfulBidders < 0 || successfulBidders > L.length);
+
+    cout << "\nSet Finished.\n"
+         << endl;
+} // SetTheNumberOfSuccessfulBidders
+
+bool outputTheListOfSuccessfulBidders(SqList L)
+{
+    if (L.length == 0)
+    {
+        cout << "\nThere is no bid\n"
+             << endl;
+        return ERROR;
+    }
+    if (ifSorted == 0)
+    {
+        cout << "\nThe List have not sorted.\n"
+             << endl;
+        return ERROR;
+    }
+    if (successfulBidders <= 0 || successfulBidders > L.length)
+        setTheNumberOfSuccessfulBidders(L);
+
+    FILE *fp;
+    int i;
+    fp = fopen("SucBidderList", "w+");
+    fprintf(fp, "This is the List of Successful bidders\n\n");
+    fprintf(fp, "Length: %d\n\n", successfulBidders);
+    for (i = 0; i < successfulBidders; ++i)
+    {
+        fprintf(fp, "Num %04d. Phone: %d  Price: %d\n", i, L.bidderGroup[L.length - i].phoneNumber, L.bidderGroup[L.length - i].price);
+    }
+
+    fclose(fp);
+
+    cout << "\nOutput Finished.\n\n"
+         << endl;
+    return OK;
+}

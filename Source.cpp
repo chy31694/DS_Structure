@@ -1,11 +1,10 @@
-#include "Statistic.h"
-
+#include "Headerfile.h"
 // -----------------------------------
 //             MAINCORE
 // -----------------------------------
 
 // -----------------------------------
-// 菜单函数
+// 各项整理&步骤计数
 // 负责人: 梁洪源 曾时铸
 // -----------------------------------
 void msg(SqList L)
@@ -17,9 +16,9 @@ void msg(SqList L)
         << "3. Output the file of BidderList\n"
         << "4. Sort the BidderList\n"
         << "5. Print the BidderList\n"
-        << "6. Insert/Delete bid\n"                     // NOT FINISHED
-        << "7. Set the number of successful bidders\n"  // NOT FINISHED
-        << "8. Output the List of successful bidders\n" // NOT FINISHED
+        << "6. Insert/Delete bid\n"
+        << "7. Set the number of successful bidders\n"
+        << "8. Output the List of successful bidders\n"
         << "9. Destroy the BidderList\n"
         << "0. Exit\n"
         << "----------------------------------------\n"
@@ -65,16 +64,14 @@ void chooseFuction(void)
         case 5:
             printTheAllBidderGroup(L);
             break;
+        case 6:
+             insertOrDelete(L);
+            break;
         case 7:
-            if (L.length == 0)
-            {
-                cout << "\nThere is no bid\n" << endl;
-                break;
-            }
-            while (successfulBidders < 0 || successfulBidders > L.length){
-            cout << "Enter the numbers of successful bidders(Now: " << L.length << " bidders):";
-            cin >> successfulBidders;
-            }
+            setTheNumberOfSuccessfulBidders(L);
+            break;
+        case 8:
+            outputTheListOfSuccessfulBidders(L);
             break;
         case 9:
             destroyTheFile();
