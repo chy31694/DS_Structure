@@ -24,12 +24,16 @@ void outputTheAllbidderList(SqList L)
     fp = fopen("BidderList", "w+");
     fprintf(fp, "This is the List of bidder\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
     fprintf(fp, "Length: %d\n\n", L.length);
+    fprintf(fp, "ifSorted: %d\n\n", ifSorted);
     for (i = 1; i <= L.length; ++i)
     {
         fprintf(fp, "Num %04d. Phone: %d  Price: %d\n", i, L.bidderGroup[i].phoneNumber, L.bidderGroup[i].price);
     }
 
     fclose(fp);
+
+    cout << "\nOutput Finished.\n\n"
+         << endl;
 } // outputTheAllbidderList
 
 // -----------------------------------
@@ -42,7 +46,6 @@ void loadTheAllbidderList(SqList &L)
     int i, t;
     FILE *fp;
 
-    fp = fopen("BidderList", "r");
     if ((fp = fopen("BidderList", "r")) == NULL)
     {
         cout << "\nFile not found!\n"
@@ -52,13 +55,16 @@ void loadTheAllbidderList(SqList &L)
 
     fscanf(fp, "This is the List of bidder\nWARNING: DO NOT MODIFY THE FORMAT!\n\n");
     fscanf(fp, "Length: %d\n\n", &L.length);
+    fscanf(fp, "ifSorted: %d\n\n", &ifSorted);
 
     for (i = 1; i <= L.length; ++i)
     {
         fscanf(fp, "Num %04d. Phone: %d  Price: %d\n", &t, &L.bidderGroup[i].phoneNumber, &L.bidderGroup[i].price);
     }
-
     fclose(fp);
+
+    cout << "\nLoad Finished.\n\n"
+         << endl;
 } // loadTheAllbidderList
 
 // -----------------------------------
@@ -75,7 +81,6 @@ void destroyTheFile(void)
 {
     FILE *fp;
 
-    fp = fopen("BidderList", "r");
     if ((fp = fopen("BidderList", "r")) == NULL)
     {
         cout << "\nFile not found!\n"
@@ -84,14 +89,9 @@ void destroyTheFile(void)
     }
     fclose(fp);
 
-    if (remove("BidderList") == 0)
-    {
-        cout << "\n\nDelete Finished\n"
-             << endl;
-    }
-    else
-    {
-        cout << "\n\nDelete Failed\n"
-             << endl;
-    }
+    system("del BidderList");
+
+    cout << "\nDelete Finished.\n"
+         << endl;
+
 } // destroyTheFile

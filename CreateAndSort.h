@@ -71,7 +71,62 @@ void printTheAllBidderGroup(SqList L)
     for (i = 1; i <= L.length; ++i)
     {
         printf("Num %04d. ", i);
-        cout << "Phone:" << L.bidderGroup[i].phoneNumber << setw(10) << "Price:"<< L.bidderGroup[i].price << endl;
+        cout << "Phone:" << L.bidderGroup[i].phoneNumber << setw(10) << "Price:" << L.bidderGroup[i].price << endl;
     }
-    cout << "\nFinished.\n" << endl;
+    cout << "\nFinished.\n"
+         << endl;
 } // printTheAllBidderGroup
+
+// -----------------------------------
+// SORTTING
+// -----------------------------------
+void ECore_Swap(Bidder &A, Bidder &B)
+{
+    Bidder T;
+    T = A;
+    A = B;
+    B = T;
+} // ECore_Swap
+
+void ECore_Qsort(Bidder arr[], int low, int high){
+    if (high <= low) return;
+    int i = low;
+    int j = high + 1;
+    int key = arr[low].price;
+    while (true)
+    {
+        /*从左向右找比key大的值*/
+        while (arr[++i].price < key)
+        {
+            if (i == high){
+                break;
+            }
+        }
+        /*从右向左找比key小的值*/
+        while (arr[--j].price > key)
+        {
+            if (j == low){
+                break;
+            }
+        }
+        if (i >= j) break;
+        /*交换i,j对应的值*/
+        ECore_Swap(arr[i], arr[j]);
+    }
+    /*中枢值与j对应值交换*/
+    ECore_Swap(arr[low], arr[j]);
+    ECore_Qsort(arr, low, j - 1);
+    ECore_Qsort(arr, j + 1, high);
+} // ECore_Qsort
+
+void sortTheAllBidderList(SqList &L)
+{
+    if (L.length == 0)
+    {
+        cout << "\nThere is no bid.\n" << endl;
+        return;
+    }
+    ECore_Qsort(L.bidderGroup, 0, L.length);
+    ifSorted = 1;
+    cout << "\nSort Finished.\n" << endl;
+} // sortTheAllBidderList

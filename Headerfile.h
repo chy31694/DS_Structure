@@ -2,7 +2,7 @@
 // 定义或者全局变量也是在这里添加
 
 // ----------------------------
-// 头文件
+// INCLUDE
 // ----------------------------
 #include <iostream>
 #include <iomanip>
@@ -11,7 +11,7 @@
 using namespace std;
 
 // ----------------------------
-// 定义
+// DEFINE
 // ----------------------------
 #define MAXSIZE 3000
 #define TRUE 1
@@ -21,7 +21,7 @@ using namespace std;
 #define OK 1
 
 // ----------------------------
-// 全局变量
+// STRUCT
 // ----------------------------
 typedef struct Bidder
 {                    // 表示每一条竞价信息
@@ -36,3 +36,4 @@ typedef struct
 } SqList;
 
 int ifSorted = 0; // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;
+int successfulBidders = 0;
