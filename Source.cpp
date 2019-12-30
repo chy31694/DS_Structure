@@ -29,8 +29,8 @@ void msg(SqList L)
     (ifSorted == 1) ? (printf("%d\n", L.bidderGroup[L.length].phoneNumber)) : (printf("Havn't Sorted\n"));
     cout
         << "----------------------------------------\n"
-        << "Enter the function you choose: ";
-}
+        << "Enter The Function You Choose: ";
+} // msg
 
 // -----------------------------------
 // chooseFuction

@@ -96,6 +96,8 @@ void insertOrDelete(SqList &L)
              << "Choose:";
         cin >> choose;
     }
-    if (choose == 1) insertBidder(L);
-    if (choose == 2) deleteBidder(L);
+    if (choose == 1)
+        insertBidder(L);
+    if (choose == 2)
+        deleteBidder(L);
 } // insertOrDelete
