@@ -48,6 +48,7 @@ bool createTheBidderGroup(SqList &L)
     {
         L.bidderGroup[i].phoneNumber = i + 1000;
         L.bidderGroup[i].price = rand() % 9001 + 1000;
+        evalCount += 2;
     }
     ifSorted = 0;
     return OK;
@@ -85,6 +86,7 @@ void ECore_Swap(Bidder &A, Bidder &B)
     T = A;
     A = B;
     B = T;
+    ++swapCount;
 } // ECore_Swap
 
 void ECore_Qsort(Bidder arr[], int low, int high){
@@ -100,6 +102,7 @@ void ECore_Qsort(Bidder arr[], int low, int high){
             if (i == high){
                 break;
             }
+            ++compCount;
         }
         /*从右向左找比key小的值*/
         while (arr[--j].price > key)
@@ -107,6 +110,7 @@ void ECore_Qsort(Bidder arr[], int low, int high){
             if (j == low){
                 break;
             }
+            ++compCount;
         }
         if (i >= j) break;
         /*交换i,j对应的值*/

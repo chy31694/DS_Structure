@@ -10,6 +10,7 @@
 void insertBidder_1(SqList &L, Bidder newBidder)
 {
     L.bidderGroup[L.length + 1] = newBidder;
+    ++evalCount;
     ++L.length;
 } // insertBidder_1
 
@@ -23,10 +24,15 @@ void insertBidder_2(SqList &L, Bidder newBidder)
             high = m - 1;
         else
             low = m + 1;
+        ++compCount;
     } // while
     for (j = L.length; j >= high; --j)
+    {
         L.bidderGroup[j + 1] = L.bidderGroup[j];
+        ++evalCount;
+    }
     L.bidderGroup[low] = newBidder;
+    ++evalCount;
     ++L.length;
 
 } // insertBidder_2
@@ -69,7 +75,10 @@ void deleteBidder(SqList &L)
         else
         {
             for (; i < L.length; ++i)
+            {
                 L.bidderGroup[i] = L.bidderGroup[i + 1];
+                ++evalCount;
+            }
             --L.length;
             cout << "\nDelete Finished.\n"
                  << endl;
