@@ -7,6 +7,7 @@
 #include <iostream>
 #include <iomanip>
 #include <time.h>
+#include <string.h>
 
 using namespace std;
 
@@ -37,10 +38,11 @@ typedef struct
 
 int ifSorted = 0; // 当前程序内的bidderGroup是否已排序,未排序为 0 ,已排序为 1 ;
 int successfulBidders = 0;
+int TestMod = 0;    // 开发者模式
 
-int swapCount = 0;  //交换次数 ;
-int evalCount = 0;  //移动与赋值次数 ;
-int compCount = 0;  //比较次数 ;
+int swapCount = 0;  // 交换次数 ;
+int evalCount = 0;  // 移动与赋值次数 ;
+int compCount = 0;  // 比较次数 ;
 
 // ----------------------------
 // FILE INCLUDE

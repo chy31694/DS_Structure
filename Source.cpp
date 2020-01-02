@@ -65,7 +65,7 @@ void chooseFuction(void)
             printTheAllBidderGroup(L);
             break;
         case 6:
-             insertOrDelete(L);
+            insertOrDelete(L);
             break;
         case 7:
             setTheNumberOfSuccessfulBidders(L);
@@ -79,6 +79,9 @@ void chooseFuction(void)
             break;
         case 0:
             exit(1);
+        case 10:
+            setTestMod();
+            break;
         }
     } while (choose != 0);
 } // chooseFuction

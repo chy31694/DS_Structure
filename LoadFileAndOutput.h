@@ -149,3 +149,35 @@ bool outputTheListOfSuccessfulBidders(SqList L)
          << endl;
     return OK;
 } // outputTheListOfSuccessfulBidders
+
+// -----------------------------------
+// TestMod
+// -----------------------------------
+void setTestMod(void)
+{
+    char s[13] = {"Kibo no hana"};
+    char a[20];
+    cout << "我们至今为止所有的努力, 并非...\n"
+         << endl;
+    gets(a);
+    if (strcmp(s, a) == 0)
+    {
+        TestMod = 1;
+        cout << "ₘₙⁿ\n"
+             << "▏n\n"
+             << "█▏ ､⺍ \n"
+             << "█▏⺰ʷʷｨ\n"
+             << "█◣▄███◣\n"
+             << "◥███████▋\n"
+             << " ◥█████  █▎\n"
+             << "   ███▉█ █▎\n"
+             << " ◢█████◣⌠ₘ℩\n"
+             << "   ███◥██◣\\≫\n"
+             << "   ███　◥█◣\n"
+             << "   █▉　　█▊\n"
+             << "   █▊　　█▊\n"
+             << " 　█▊　　█▋\n"
+             << "   █▏　　█▙\n"
+             << "   █ \n";
+    }
+}
