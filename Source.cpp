@@ -79,8 +79,8 @@ void chooseFuction(void)
             break;
         case 0:
             exit(1);
-        case 10:
-            setTestMod();
+            // case -1:
+            //     setTestMod();
             break;
         }
     } while (choose != 0);
