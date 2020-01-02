@@ -10,25 +10,25 @@
 void msg(SqList L)
 {
     cout
-        << "----------------------------------------\n"
-        << "1. Load the file of BidderList \n"
-        << "2. Create a new BidderList\n"
-        << "3. Output the file of BidderList\n"
-        << "4. Sort the BidderList\n"
-        << "5. Print the BidderList\n"
-        << "6. Insert/Delete bid\n"
-        << "7. Set the number of successful bidders\n"
-        << "8. Output the List of successful bidders\n"
-        << "9. Destroy the BidderList\n"
-        << "0. Exit\n"
-        << "----------------------------------------\n"
+        << "-----------------------------------------------\n"
+        << "*   1. Load the file of BidderList            *\n"
+        << "*   2. Create a new BidderList                *\n"
+        << "*   3. Output the file of BidderList          *\n"
+        << "*   4. Sort the BidderList                    *\n"
+        << "*   5. Print the BidderList                   *\n"
+        << "*   6. Insert/Delete bid                      *\n"
+        << "*   7. Set the number of successful bidders   *\n"
+        << "*   8. Output the List of successful bidders  *\n"
+        << "*   9. Destroy the BidderList                 *\n"
+        << "*   0. Exit                                   *\n"
+        << "-----------------------------------------------\n"
         << "The highest price  :";
     (ifSorted == 1) ? (printf("%d\n", L.bidderGroup[L.length].price)) : (printf("Havn't Sorted\n"));
     cout
         << "The highest bidder :";
     (ifSorted == 1) ? (printf("%d\n", L.bidderGroup[L.length].phoneNumber)) : (printf("Havn't Sorted\n"));
     cout
-        << "----------------------------------------\n"
+        << "-----------------------------------------------\n"
         << "Enter The Function You Choose: ";
 } // msg
 
