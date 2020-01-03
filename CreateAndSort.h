@@ -89,8 +89,10 @@ void ECore_Swap(Bidder &A, Bidder &B)
     ++swapCount;
 } // ECore_Swap
 
-void ECore_Qsort(Bidder arr[], int low, int high){
-    if (high <= low) return;
+void ECore_Qsort(Bidder arr[], int low, int high)
+{
+    if (high <= low)
+        return;
     int i = low;
     int j = high + 1;
     int key = arr[low].price;
@@ -99,7 +101,8 @@ void ECore_Qsort(Bidder arr[], int low, int high){
         /*从左向右找比key大的值*/
         while (arr[++i].price < key)
         {
-            if (i == high){
+            if (i == high)
+            {
                 break;
             }
             ++compCount;
@@ -107,12 +110,14 @@ void ECore_Qsort(Bidder arr[], int low, int high){
         /*从右向左找比key小的值*/
         while (arr[--j].price > key)
         {
-            if (j == low){
+            if (j == low)
+            {
                 break;
             }
             ++compCount;
         }
-        if (i >= j) break;
+        if (i >= j)
+            break;
         /*交换i,j对应的值*/
         ECore_Swap(arr[i], arr[j]);
     }
@@ -126,10 +131,12 @@ void sortTheAllBidderList(SqList &L)
 {
     if (L.length == 0)
     {
-        cout << "\nThere is no bid.\n" << endl;
+        cout << "\nThere is no bid.\n"
+             << endl;
         return;
     }
     ECore_Qsort(L.bidderGroup, 0, L.length);
     ifSorted = 1;
-    cout << "\nSort Finished.\n" << endl;
+    cout << "\nSort Finished.\n"
+         << endl;
 } // sortTheAllBidderList

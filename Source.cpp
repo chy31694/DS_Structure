@@ -60,7 +60,9 @@ void chooseFuction(void)
             break;
         case 4:
             sortTheAllBidderList(L);
-            cout << "\nTotal swapped " << swapCount << "times." << endl;
+            cout << "\nTotal swapped " << swapCount << " times." << endl;
+            cout << "\nTotal revalued " << evalCount << " times." << endl;
+            evalCount = 0;
             swapCount = 0;
             break;
         case 5:
@@ -82,8 +84,8 @@ void chooseFuction(void)
         case 0:
             exit(1);
             // case -1:
-            //     setTestMod();
-            break;
+            // setTestMod();
+            // break;
         }
     } while (choose != 0);
 } // chooseFuction
