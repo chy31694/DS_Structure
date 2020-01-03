@@ -60,6 +60,8 @@ void chooseFuction(void)
             break;
         case 4:
             sortTheAllBidderList(L);
+            cout << "\nTotal swapped " << swapCount << "times." << endl;
+            swapCount = 0;
             break;
         case 5:
             printTheAllBidderGroup(L);
